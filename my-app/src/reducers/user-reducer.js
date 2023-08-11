@@ -3,12 +3,19 @@ export const initialUserState = {
 	age: 45,
 }
 
-export const userReducer = (state = initialUserState, action) => {
-	switch (action.type) {
+export const userReducer = (state = initialUserState, { type, payload }) => {
+	switch (type) {
 		case 'INCREASE_AGE': {
 			return {
 				...state,
-				age: state.age + action.payload,
+				age: state.age + payload,
+			}
+		}
+
+		case 'REDUCE_AGE': {
+			return {
+				...state,
+				age: state.age - payload,
 			}
 		}
 
@@ -22,7 +29,15 @@ export const userReducer = (state = initialUserState, action) => {
 		case 'CHANGE_USER': {
 			return {
 				...state,
-				...action.payload,
+				...payload,
+			}
+		}
+
+		case 'FETCH_USER': {
+			return {
+				...state,
+				name: payload.name,
+				age: payload.email,
 			}
 		}
 

@@ -1,3 +1,5 @@
 export * from './increase-age'
+export * from './reduce-age'
 export * from './reset-age'
 export * from './change-user'
+export * from './fetch-user'
