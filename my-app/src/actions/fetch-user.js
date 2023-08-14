@@ -4,9 +4,7 @@ const fetchUserDataPlaceholder = () => {
 		.then((json) => console.log(json.name, json.email))
 }
 
-fetchUserDataPlaceholder()
-
-export const fetchUserAsync = () => (dispatch) =>
-	fetchUserDataPlaceholder().then((userDataFromServer) =>
+export const fetchUserAsync = (dispatch) =>
+	fetchUserDataPlaceholder((userDataFromServer) => {
 		dispatch({ type: 'FETCH_USER', payload: userDataFromServer })
-	)
+	})

@@ -49,7 +49,7 @@ export const ControlPanel = () => {
       <p></p>
 			<div className={styles.buttons}>
 				<button className={styles.button} onClick={onUserFetch}>
-					Загрузить пользователя
+					Загрузить пользователя в консоль
 				</button>
 			</div>
 		</>

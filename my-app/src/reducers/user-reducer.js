@@ -36,8 +36,7 @@ export const userReducer = (state = initialUserState, { type, payload }) => {
 		case 'FETCH_USER': {
 			return {
 				...state,
-				name: payload.name,
-				age: payload.email,
+				...payload,
 			}
 		}
 
