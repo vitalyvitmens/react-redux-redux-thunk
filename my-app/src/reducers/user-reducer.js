@@ -22,18 +22,12 @@ export const userReducer = (state = initialUserState, { type, payload }) => {
 		case 'RESET_AGE': {
 			return {
 				...state,
+				name: initialUserState.name,
 				age: initialUserState.age,
 			}
 		}
 
 		case 'CHANGE_USER': {
-			return {
-				...state,
-				...payload,
-			}
-		}
-
-		case 'FETCH_USER': {
 			return {
 				...state,
 				...payload,

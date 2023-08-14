@@ -5,7 +5,7 @@ const fetchUserDataMock = () => {
 				name: 'Егор',
 				age: 13,
 			})
-		}, 1500)
+		}, 500)
 	})
 }
 

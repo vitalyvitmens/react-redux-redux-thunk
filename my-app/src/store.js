@@ -5,10 +5,11 @@ import {
   compose,
 } from 'redux'
 import thunk from 'redux-thunk'
-import { userReducer, productsReducer } from './reducers'
+import { userReducer, productsReducer, userServerReducer } from './reducers'
 
 const reducer = combineReducers({
 	userState: userReducer,
+	userServerState: userServerReducer,
 	productsState: productsReducer,
 })
 

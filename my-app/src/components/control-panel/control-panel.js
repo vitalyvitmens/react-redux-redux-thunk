@@ -5,6 +5,7 @@ import {
 	increaseAge,
 	reduceAge,
   fetchUserAsync,
+  RESET_USER_SERVER
 } from '../../actions'
 import styles from './control-panel.module.css'
 export const ControlPanel = () => {
@@ -30,6 +31,11 @@ export const ControlPanel = () => {
 		dispatch(fetchUserAsync)
 	}
 
+  const onUserServerReset = () => {
+		dispatch(RESET_USER_SERVER)
+	}
+
+
 	return (
 		<>
 			<div className={styles.buttons}>
@@ -40,7 +46,7 @@ export const ControlPanel = () => {
 					Уменьшить возраст
 				</button>
 				<button className={styles.button} onClick={onAgeReset}>
-					Сбросить возраст
+					Сбросить данные
 				</button>
 				<button className={styles.button} onClick={onUserChange}>
 					Сменить пользователя
@@ -49,7 +55,10 @@ export const ControlPanel = () => {
       <p></p>
 			<div className={styles.buttons}>
 				<button className={styles.button} onClick={onUserFetch}>
-					Загрузить пользователя в консоль
+					Загрузить пользователя с сервера
+				</button>
+				<button className={styles.button} onClick={onUserServerReset}>
+					Сбросить данные пользователя с сервера
 				</button>
 			</div>
 		</>
